@@ -8,11 +8,11 @@ public class Pot : MonoBehaviour
     private int _hpMax;
 
     private int _currentHp;
-    private Animator animator;
+    private Animator _animator;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         _currentHp = _hpMax;
     }
 
@@ -31,7 +31,7 @@ public class Pot : MonoBehaviour
 
     private void BeDestroy()
     {
-        animator.SetBool("broken", true);
+        _animator.SetBool("broken", true);
         StartCoroutine(BreakCo());
     }
 
